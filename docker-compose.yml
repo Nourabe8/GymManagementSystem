@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  gym-app:
+    build: ./gym-app
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=Aa123456789
+      - DB_NAME=gym_db
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Aa123456789
+      MYSQL_DATABASE: gym_db
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+  db-data:
+
