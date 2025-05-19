@@ -1,0 +1,26 @@
+name: Notify Deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send deploy notification to n8n
+        run: |
+          curl -X POST http://<n8n-ip>:5678/webhook/notify-deploy \
+          -H "Content-Type: application/json" \
+          -d '{
+                "repository": {
+                  "full_name": "${{ github.repository }}"
+                },
+                "pusher": {
+                  "name": "${{ github.actor }}"
+                },
+                "commit": {
+                  "url": "https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
+                }
+              }'
