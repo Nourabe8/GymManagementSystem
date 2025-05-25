@@ -1,0 +1,44 @@
+# Admin binding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: admin-binding
+  namespace: gym-app
+subjects:
+- kind: ServiceAccount
+  name: admin-sa
+roleRef:
+  kind: Role
+  name: admin-role
+  apiGroup: rbac.authorization.k8s.io
+
+---
+# Developer binding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: developer-binding
+  namespace: gym-app
+subjects:
+- kind: ServiceAccount
+  name: developer-sa
+roleRef:
+  kind: Role
+  name: developer-role
+  apiGroup: rbac.authorization.k8s.io
+
+---
+# Observer binding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: observer-binding
+  namespace: gym-app
+subjects:
+- kind: ServiceAccount
+  name: observer-sa
+roleRef:
+  kind: Role
+  name: observer-role
+  apiGroup: rbac.authorization.k8s.io
+
