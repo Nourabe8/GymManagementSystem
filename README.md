@@ -62,10 +62,10 @@ AutoFlow uses Kubernetes **Role-Based Access Control (RBAC)** with **ServiceAcco
 Every deployment event triggers a webhook to n8n, which parses the payload and sends a detailed message to a configured Slack channel.
 
 > Example message:  
-> `:rocket: New update just pushed!
-:bust_in_silhouette: Pusher: Nourabe8
-:file_folder: Repo: Nourabe8/GymManagementSystem
-:link: Commit: https://github.com/Nourabe8/GymManagementSystem/commit/02f84554df1f75901a725472c51bcc414489f82a`
+> `> 🚀 New update just pushed!  
+> 👤 Pusher: Nourabe8  
+> 📁 Repo: Nourabe8/GymManagementSystem  
+> 🔗 Commit: https://github.com/Nourabe8/GymManagementSystem/commit/02f84554df1f75901a725472c51bcc414489f82a`
 
 ## 📎 Repository
 
