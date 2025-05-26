@@ -39,3 +39,47 @@ AutoFlow addresses these pain points by automating the entire workflow — from 
 
 ## 📁 Project Structure
 
+```
+AutoFlow/
+├── k8s/
+│   ├── deployment.yaml
+│   ├── service.yaml
+│   └── ingress.yaml
+├── argo/
+│   └── application.yaml
+├── n8n/
+│   └── webhook-to-slack.json
+├── README.md
+└── ...
+```
+
+## 🔐 Access Control
+
+AutoFlow uses Kubernetes **Role-Based Access Control (RBAC)** with **ServiceAccounts** to enforce least privilege and secure deployment actions.
+
+## 🔔 Slack Notifications
+
+Every deployment event triggers a webhook to n8n, which parses the payload and sends a detailed message to a configured Slack channel.
+
+> Example message:  
+> `✅ Deployment to prod successful by @username - Commit: 5f3b2e7`
+
+## 📎 Repository
+
+Project link: [GymManagementSystem/AutoFlow](https://github.com/Nourabe8/GymManagementSystem/tree/master)
+
+## 📌 Future Improvements
+
+- Add unit and integration tests for CI/CD validation  
+- Integrate Prometheus/Grafana for observability  
+- Add approval step before production deployment  
+
+## 👩🏻‍💻 Author
+
+**Noura Al-Otaibi**  
+DevOps Engineer | Automation Enthusiast  
+[LinkedIn Profile](https://www.linkedin.com/in/nourabe8/)
+
+---
+
+Feel free to fork, contribute, or suggest improvements 🚀
